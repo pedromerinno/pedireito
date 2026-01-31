@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/Layout";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink, ArrowLeft, HelpCircle } from "lucide-react";
 
 const FAQ_ITEMS = [
   {
@@ -54,70 +54,89 @@ const FaqSuporte = () => {
 
   return (
     <Layout>
-      <div className="max-w-[600px] mx-auto px-4 py-8 space-y-10">
-        {/* FAQ */}
-        <section aria-labelledby="faq-heading">
-          <h1
-            id="faq-heading"
-            className="text-2xl sm:text-3xl font-bold text-foreground mb-6"
-          >
-            Perguntas frequentes
-          </h1>
-          <Accordion type="single" collapsible className="w-full">
-            {FAQ_ITEMS.map((item) => (
-              <AccordionItem key={item.id} value={item.id}>
-                <AccordionTrigger className="text-left">
-                  {item.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {item.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </section>
-
-        {/* Suporte */}
-        <section
-          id="suporte"
-          className="bg-card rounded-xl border p-6 sm:p-8 space-y-4"
-          aria-labelledby="suporte-heading"
-        >
-          <h2
-            id="suporte-heading"
-            className="text-xl sm:text-2xl font-bold text-foreground flex items-center gap-2"
-          >
-            <Mail className="h-6 w-6 text-primary" aria-hidden />
-            Suporte
-          </h2>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Precisa de ajuda com seu pedido, dúvidas sobre entrega ou algum
-            problema técnico? Entre em contato pelo canal oficial da Pé Direito.
-          </p>
-          <Button
-            asChild
-            className="w-full sm:w-auto bg-primary hover:bg-primary/90"
-          >
-            <a
-              href="https://www.usepedireito.com.br/contato"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2"
+      <div className="min-h-full bg-[#FCF8ED]">
+        <div className="max-w-[640px] mx-auto px-4 sm:px-6 py-10 sm:py-14 space-y-12">
+          {/* Hero */}
+          <header className="text-center space-y-3">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#FFF2C9] text-[#2B9402] mb-2" aria-hidden>
+              <HelpCircle className="w-6 h-6" />
+            </div>
+            <h1
+              id="faq-heading"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2B9402] tracking-tight"
             >
-              Falar com o suporte
-              <ExternalLink className="h-4 w-4" aria-hidden />
-            </a>
-          </Button>
-        </section>
+              Perguntas frequentes
+            </h1>
+            <p className="text-[#2B9402]/85 text-base sm:text-lg max-w-md mx-auto leading-relaxed">
+              Tudo o que você precisa saber sobre o lançamento e a abertura do carrinho.
+            </p>
+          </header>
 
-        <p className="text-center">
-          <Link
-            to="/"
-            className="text-sm text-primary hover:underline font-medium"
+          {/* FAQ em cards */}
+          <section aria-labelledby="faq-heading" className="space-y-3">
+            <Accordion type="single" collapsible className="w-full space-y-3">
+              {FAQ_ITEMS.map((item) => (
+                <AccordionItem
+                  key={item.id}
+                  value={item.id}
+                  className="border border-border border-b-0 rounded-xl bg-card shadow-sm overflow-hidden px-4 sm:px-5 data-[state=open]:shadow-md transition-shadow"
+                >
+                  <AccordionTrigger className="text-left py-5 sm:py-6 hover:no-underline [&[data-state=open]]:pb-2 text-base sm:text-lg font-semibold text-primary">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-primary/80 text-sm sm:text-base leading-relaxed pb-5 sm:pb-6 pt-0">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
+
+          {/* Suporte */}
+          <section
+            id="suporte"
+            className="bg-[#2B9402] rounded-2xl p-6 sm:p-8 space-y-5 text-white"
+            aria-labelledby="suporte-heading"
           >
-            ← Voltar para a contagem regressiva
-          </Link>
-        </p>
+            <h2
+              id="suporte-heading"
+              className="text-xl sm:text-2xl font-bold flex items-center gap-3"
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20" aria-hidden>
+                <Mail className="h-5 w-5" />
+              </span>
+              Suporte
+            </h2>
+            <p className="text-white/90 text-sm sm:text-base leading-relaxed max-w-lg">
+              Precisa de ajuda com seu pedido, dúvidas sobre entrega ou algum problema técnico? Entre em contato pelo canal oficial da Pé Direito.
+            </p>
+            <Button
+              asChild
+              className="w-full sm:w-auto bg-white text-[#2B9402] hover:bg-white/90 font-semibold rounded-full px-8 py-6"
+            >
+              <a
+                href="https://www.usepedireito.com.br/contato"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                Falar com o suporte
+                <ExternalLink className="h-4 w-4" aria-hidden />
+              </a>
+            </Button>
+          </section>
+
+          {/* Voltar */}
+          <p className="text-center pt-4">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[#2B9402] hover:text-[#2B9402]/80 transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4" aria-hidden />
+              Voltar para a contagem regressiva
+            </Link>
+          </p>
+        </div>
       </div>
     </Layout>
   );

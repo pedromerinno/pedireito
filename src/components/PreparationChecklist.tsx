@@ -4,7 +4,7 @@ import { useState } from "react";
 const checklistItems = [
   "Salve esta página nos favoritos",
   "Coloque um alarme para segunda às 8h55",
-  "Esteja logado no site 5 minutos antes",
+  "Esteja nesse site 5 minutos antes do lançamento para clicar no link de abertura",
   "Tenha seus dados de pagamento prontos",
 ];
 

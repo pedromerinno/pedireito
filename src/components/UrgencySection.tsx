@@ -1,21 +1,13 @@
-import { Package, Users, Clock, Calendar } from "lucide-react";
+import { Package, Users } from "lucide-react";
 
 const urgencyItems = [
   {
     icon: Package,
-    text: "10.000 pares disponíveis neste lote",
+    text: "São apenas 10 mil pares no primeiro lote",
   },
   {
     icon: Users,
     text: "Mais de 50.000 pessoas aguardando",
-  },
-  {
-    icon: Clock,
-    text: "Último lote esgotou em 4 horas",
-  },
-  {
-    icon: Calendar,
-    text: "Próxima produção só em 60 dias",
   },
 ];
 

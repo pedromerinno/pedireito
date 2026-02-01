@@ -73,7 +73,7 @@ const Index = () => {
       </main>
 
       {/* Footer – verde escuro */}
-      <footer className="bg-[#2B9402] py-10 px-6 sm:py-12 sm:px-8 -mt-px">
+      <footer className="bg-[#2B9402] py-10 px-6 sm:py-12 sm:px-8 -mt-1">
         <div className="max-w-[600px] mx-auto text-center space-y-4">
           <div className="flex justify-center gap-6 text-sm font-medium">
             <Link to="/" className="text-secondary hover:text-secondary/90 transition-colors uppercase tracking-wide">

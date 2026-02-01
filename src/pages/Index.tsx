@@ -32,7 +32,7 @@ const Index = () => {
         {/* Imagem fora do container, maior que o conteúdo */}
         <div className="mt-12 sm:mt-16 w-full flex justify-center">
           <img
-            src="/Banner_Celular_Chinelo.gif"
+            src="/Banner_Chinelo.gif"
             alt="Pé Direito – produto"
             className="w-auto max-h-[800px] sm:max-h-[920px] md:max-h-[1000px] object-contain"
             style={{ maxWidth: "min(1100px, 95vw)" }}
